@@ -390,14 +390,9 @@ footer {
   </div>
 </footer>
 
-<script>
-  fetch('https://api.counterapi.dev/v1/trulsvaagan/visits/up')
-    .then(r => r.json())
-    .then(d => {
-      document.getElementById('visitor-count').textContent = d.count.toLocaleString('no-NO');
-    })
-    .catch(() => {});
-</script>
+<script data-goatcounter="https://trulsvaagan.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
 
 </body>
 </html>
