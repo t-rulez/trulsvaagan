@@ -385,7 +385,19 @@ footer {
   <div class="footer-name">Truls Vaagan</div>
   <div class="footer-sub">Oslo · Holmen · Sopra Steria</div>
   <div style="margin-top:1rem;font-size:0.75rem;color:#444">Familie · Liverpool · Fiske · Golf · Jakt</div>
+  <div style="margin-top:2rem;font-size:0.7rem;color:#333;letter-spacing:0.1em">
+    Antall besøkende: <span id="visitor-count" style="color:#555">–</span>
+  </div>
 </footer>
+
+<script>
+  fetch('https://api.counterapi.dev/v1/trulsvaagan/visits/up')
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('visitor-count').textContent = d.count.toLocaleString('no-NO');
+    })
+    .catch(() => {});
+</script>
 
 </body>
 </html>
